@@ -1,10 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { AbstractEntity } from '@app/database/abstract.entity';
+import { Column, Entity } from 'typeorm';
 
 @Entity({ name: 'tags' })
-export class TagEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class TagEntity extends AbstractEntity<TagEntity> {
   @Column()
   name: string;
 }
